@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#d9360b">
+    <meta name="description" content="हॉटेल जय मल्हार, धनगरवाडी फाटा. चहा, नास्ता, जेवण. जिथं चव बोलते...">
+    <title>हॉटेल जय मल्हार | जिथं चव बोलते...</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Hind:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --red: #d9360b;
+            --red2: #a82206;
+            --maroon: #4a1209;
+            --sun: #ffd21f;
+            --sun2: #ffe680;
+            --cream: #fff8e6;
+            --blush: #ffe1cf;
+            --leaf: #2f8f3e;
+            --mint: #d8f1d2;
+            --d: 'Baloo 2', 'Noto Sans Devanagari', sans-serif;
+            --b: Hind, 'Noto Sans Devanagari', sans-serif
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 84px
+        }
+
+        body {
+            font-family: var(--b);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--maroon);
+            background: var(--cream) radial-gradient(#ffd21f55 2px, transparent 2.5px) 0 0/30px 30px;
+            overflow-x: hidden
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--d);
+            line-height: 1.2;
+            font-weight: 800
+        }
+
+        .w {
+            width: min(1160px, 92%);
+            margin: auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--red);
+            padding: calc(8px + env(safe-area-inset-top, 0px)) 0 8px;
+            box-shadow: 0 4px 0 var(--sun)
+        }
+
+        .hd {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px
+        }
+
+        .br {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-family: var(--d);
+            font-weight: 800;
+            font-size: 1.35rem
+        }
+
+        .br img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 3px solid var(--sun)
+        }
+
+        nav {
+            display: flex;
+            gap: 26px;
+            color: #fff;
+            font-weight: 600
+        }
+
+        nav a:hover {
+            color: var(--sun)
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--sun);
+            color: var(--maroon);
+            font-family: var(--d);
+            font-weight: 800;
+            padding: 6px 22px;
+            border-radius: 99px;
+            box-shadow: 0 4px 0 #c79a00;
+            transition: .2s
+        }
+
+        .pill:hover {
+            transform: translateY(-2px) rotate(-1.5deg)
+        }
+
+        .pill.w2 {
+            background: #fff;
+            box-shadow: 0 4px 0 #d9c9b0
+        }
+
+        .pill.rd {
+            background: var(--red);
+            color: #fff;
+            box-shadow: 0 4px 0 var(--red2)
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--maroon);
+            outline-offset: 3px
+        }
+
+        .hero {
+            background: var(--red) radial-gradient(circle at 78% 40%, #ff6a2a 0, transparent 55%);
+            color: #fff;
+            padding: 56px 0 130px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .18;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply
+        }
+
+        .hg {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 30px;
+            align-items: center
+        }
+
+        .chips {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px
+        }
+
+        .chips span {
+            background: #fff;
+            color: var(--red2);
+            font-weight: 600;
+            padding: 2px 16px;
+            border-radius: 99px;
+            font-size: .95rem
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8.5vw, 6.6rem);
+            color: var(--sun);
+            text-shadow: 0 5px 0 var(--red2);
+            line-height: 1.05
+        }
+
+        .hero h1 small {
+            display: block;
+            font-size: .34em;
+            color: #fff;
+            text-shadow: none;
+            margin-bottom: 6px
+        }
+
+        .hero p.l {
+            font-size: 1.25rem;
+            max-width: 34ch;
+            margin: 18px 0 28px
+        }
+
+        .ac {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+
+        .lg {
+            position: relative;
+            justify-self: center;
+            width: min(420px, 80vw);
+            aspect-ratio: 1
+        }
+
+        .lg>img.m {
+            width: 100%;
+            border-radius: 50%;
+            border: 7px solid var(--sun);
+            box-shadow: 0 0 0 14px rgba(255, 210, 31, .28), 0 24px 50px rgba(74, 18, 9, .45);
+            animation: pop .9s cubic-bezier(.3, 1.5, .5, 1) both
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(.4) rotate(-25deg);
+                opacity: 0
+            }
+        }
+
+        .fl {
+            position: absolute;
+            width: 30%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 24px rgba(74, 18, 9, .4);
+            animation: bob 4s ease-in-out infinite
+        }
+
+        .fl.a {
+            left: -14%;
+            top: 6%
+        }
+
+        .fl.b {
+            right: -12%;
+            top: 38%;
+            animation-delay: -1.3s
+        }
+
+        .fl.c {
+            left: -4%;
+            bottom: -6%;
+            animation-delay: -2.4s
+        }
+
+        @keyframes bob {
+            50% {
+                transform: translateY(-14px) rotate(4deg)
+            }
+        }
+
+        .wv {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            display: block;
+            width: 100%;
+            height: 80px
+        }
+
+        .tk {
+            background: var(--sun);
+            color: var(--maroon);
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: var(--d);
+            font-weight: 800;
+            font-size: 1.3rem;
+            padding: 6px 0;
+            border-bottom: 4px solid var(--maroon)
+        }
+
+        .tk div {
+            display: inline-block;
+            animation: mq 32s linear infinite
+        }
+
+        .tk span {
+            margin: 0 22px
+        }
+
+        @keyframes mq {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        section {
+            padding: 84px 0
+        }
+
+        .hl {
+            text-align: center;
+            margin-bottom: 44px
+        }
+
+        .hl h2 {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            color: var(--red)
+        }
+
+        .hl p {
+            max-width: 52ch;
+            margin: 6px auto 0
+        }
+
+        .sv {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px
+        }
+
+        .sc {
+            border-radius: 30px;
+            padding: 34px 28px;
+            text-align: center;
+            border: 3px solid var(--maroon);
+            box-shadow: 8px 8px 0 var(--maroon);
+            transition: .3s
+        }
+
+        .sc:nth-child(1) {
+            background: var(--sun2);
+            transform: rotate(-1.6deg)
+        }
+
+        .sc:nth-child(2) {
+            background: var(--blush)
+        }
+
+        .sc:nth-child(3) {
+            background: var(--mint);
+            transform: rotate(1.6deg)
+        }
+
+        .sc:hover {
+            transform: translateY(-8px) rotate(0)
+        }
+
+        .sc b {
+            display: block;
+            font-size: 3.4rem;
+            line-height: 1.2
+        }
+
+        .sc h3 {
+            font-size: 1.8rem
+        }
+
+        .fil {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: -14px 0 36px
+        }
+
+        .chip {
+            font: 600 1rem var(--b);
+            padding: 6px 22px;
+            border-radius: 99px;
+            border: 2px solid var(--maroon);
+            background: #fff;
+            color: var(--maroon);
+            cursor: pointer;
+            transition: .2s
+        }
+
+        .chip.on,
+        .chip:hover {
+            background: var(--red);
+            border-color: var(--red);
+            color: #fff
+        }
+
+        .mg {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px
+        }
+
+        .dish {
+            background: #fff;
+            border: 3px solid var(--maroon);
+            border-radius: 26px;
+            padding: 12px 12px 20px;
+            position: relative;
+            box-shadow: 6px 6px 0 var(--sun);
+            transition: .3s
+        }
+
+        .dish:hover {
+            transform: translateY(-8px) rotate(-1.2deg);
+            box-shadow: 6px 12px 0 var(--red)
+        }
+
+        .dish[hidden] {
+            display: none
+        }
+
+        .ph {
+            border-radius: 18px;
+            overflow: hidden;
+            background: var(--red);
+            aspect-ratio: 16/11
+        }
+
+        .ph img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s
+        }
+
+        .dish:hover .ph img {
+            transform: scale(1.1)
+        }
+
+        .tg {
+            position: absolute;
+            top: 22px;
+            left: 22px;
+            background: var(--sun);
+            color: var(--maroon);
+            font-weight: 600;
+            font-size: .82rem;
+            padding: 0 12px;
+            border-radius: 99px;
+            border: 2px solid var(--maroon);
+            line-height: 1.6
+        }
+
+        .t-पेय {
+            background: var(--blush)
+        }
+
+        .t-भेळ,
+        .t-भजी {
+            background: var(--mint)
+        }
+
+        .t-गोड {
+            background: #ffd0e0
+        }
+
+        .dish h3 {
+            font-size: 1.5rem;
+            color: var(--red);
+            margin: 12px 8px 0
+        }
+
+        .dish p {
+            font-size: .95rem;
+            line-height: 1.5;
+            margin: 2px 8px 0
+        }
+
+        .mn {
+            text-align: center;
+            margin-top: 34px;
+            font-family: var(--d);
+            font-weight: 700;
+            font-size: 1.3rem
+        }
+
+        .fr {
+            background: var(--sun)
+        }
+
+        .fg {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 50px;
+            align-items: center
+        }
+
+        .fr img.f {
+            width: 100%;
+            border-radius: 30px;
+            border: 5px solid #fff;
+            box-shadow: 12px 12px 0 var(--red);
+            transform: rotate(-2deg)
+        }
+
+        .fr h2 {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            color: var(--red2)
+        }
+
+        .fr .q {
+            font-family: var(--d);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 16px 0 8px
+        }
+
+        .vg {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px
+        }
+
+        .vc {
+            border: 3px solid var(--maroon);
+            border-radius: 30px;
+            padding: 34px;
+            background: #fff;
+            box-shadow: 8px 8px 0 var(--maroon)
+        }
+
+        .vc h3 {
+            font-size: 1.7rem;
+            color: var(--red);
+            margin-bottom: 6px
+        }
+
+        .vc.call {
+            background: var(--red);
+            color: #fff
+        }
+
+        .vc.call h3 {
+            color: var(--sun)
+        }
+
+        .vc .big {
+            display: inline-block;
+            margin-top: 14px;
+            font-family: var(--d);
+            font-weight: 800;
+            font-size: 2.1rem;
+            color: var(--maroon);
+            background: var(--sun);
+            padding: 0 26px;
+            border-radius: 99px;
+            box-shadow: 0 5px 0 #c79a00
+        }
+
+        footer {
+            background: var(--maroon);
+            color: var(--sun2);
+            text-align: center;
+            padding: 50px 0 36px;
+            position: relative
+        }
+
+        footer img {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            border: 3px solid var(--sun);
+            margin-bottom: 10px
+        }
+
+        footer .n {
+            font-family: var(--d);
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--sun)
+        }
+
+        footer a.p {
+            display: inline-block;
+            margin-top: 8px;
+            font-family: var(--d);
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #fff
+        }
+
+        footer small {
+            display: block;
+            margin-top: 22px;
+            opacity: .7
+        }
+
+        .fab {
+            position: fixed;
+            z-index: 60;
+            right: 14px;
+            bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+            display: none
+        }
+
+        .rv {
+            opacity: 0;
+            transform: translateY(26px) scale(.98);
+            transition: opacity .7s, transform .7s
+        }
+
+        .rv.on {
+            opacity: 1;
+            transform: none
+        }
+
+        @media(max-width:1000px) {
+            .mg {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        @media(max-width:800px) {
+            nav {
+                display: none
+            }
+
+            .hg,
+            .fg,
+            .vg,
+            .sv {
+                grid-template-columns: 1fr
+            }
+
+            .lg {
+                order: -1;
+                margin: 24px 0 20px
+            }
+
+            .mg {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px
+            }
+
+            .fab {
+                display: inline-flex
+            }
+
+            .fl.a {
+                left: -4%
+            }
+
+            .fl.b {
+                right: -4%
+            }
+
+            .sc:nth-child(n) {
+                transform: none
+            }
+
+            .hero {
+                padding-bottom: 110px
+            }
+
+            section {
+                padding: 64px 0
+            }
+        }
+
+        @media(max-width:480px) {
+            .mg {
+                grid-template-columns: 1fr
+            }
+
+            .br {
+                font-size: 1.1rem
+            }
+
+            .br img {
+                width: 44px;
+                height: 44px
+            }
+
+            .hd .pill {
+                padding: 4px 16px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none !important;
+                transition: none !important
+            }
+
+            .rv {
+                opacity: 1;
+                transform: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="w hd"><a class="br" href="#home"><img src="assets/logo.png" alt="हॉटेल जय मल्हार लोगो"><span>हॉटेल
+                    जय मल्हार</span></a>
+            <nav><a href="#home">मुख्यपान</a><a href="#menu">आमचा मेनू</a><a href="#khasiyat">खासियत</a><a
+                    href="#hotel">हॉटेल</a><a href="#bhet">भेट द्या</a></nav>
+            <a class="pill" href="tel:+918530401182">📞 कॉल करा</a>
+        </div>
+    </header>
+
+    <div class="hero" id="home">
+        <div class="w hg">
+            <div>
+                <div class="chips"><span>🌿 शुद्ध शाकाहारी</span><span>📍 धनगरवाडी फाटा</span></div>
+                <h1><small>हॉटेल जय मल्हार</small>जिथं चव<br>बोलते...</h1>
+                <p class="l">चहा, नास्ता आणि जेवण. प्रत्येक घासात आपुलकी आणि चेहऱ्यावर हसू! 😊</p>
+                <div class="ac"><a class="pill" href="#menu">आमचा मेनू पाहा</a><a class="pill w2"
+                        href="tel:+918530401182">📞 ८५३०४०११८२</a></div>
+            </div>
+            <div class="lg"><img class="m" src="assets/logo.png" alt="हॉटेल जय मल्हार"><img class="fl a"
+                    src="assets/vadapav.webp" alt="वडापाव"><img class="fl b" src="assets/misal.webp" alt="मिसळपाव"><img
+                    class="fl c" src="assets/ladu.webp" alt="मोतीचुर लाडू"></div>
+        </div>
+        <svg class="wv" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+            <path fill="#ffd21f" d="M0 40C120 80 240 0 360 30s240 50 360 20 240-50 360-10 240 50 360 20V80H0z" />
+        </svg>
+    </div>
+    <div class="tk" aria-hidden="true">
+        <div><span>चहा ☕</span><span>कॉफी ☕</span><span>वडापाव 🥪</span><span>मिसळपाव 🌶️</span><span>भजी
+                😋</span><span>समोसा 🥟</span><span>पॅटिस ✨</span><span>रस्सावडा 🍲</span><span>भेळ
+                🥗</span><span>मोतीचुर लाडू 🟠</span><span>चहा ☕</span><span>कॉफी ☕</span><span>वडापाव
+                🥪</span><span>मिसळपाव 🌶️</span><span>भजी 😋</span><span>समोसा 🥟</span><span>पॅटिस
+                ✨</span><span>रस्सावडा 🍲</span><span>भेळ 🥗</span><span>मोतीचुर लाडू 🟠</span></div>
+    </div>
+
+    <section id="khasiyat">
+        <div class="w">
+            <div class="hl rv">
+                <h2>आमची खासियत</h2>
+                <p>सकाळच्या चहापासून पोटभर जेवणापर्यंत, सगळं एकाच ठिकाणी.</p>
+            </div>
+            <div class="sv">
+                <div class="sc rv"><b>☕</b>
+                    <h3>चहा</h3>
+                    <p>वाफाळता, कडक आणि दिवस बनवणारा.</p>
+                </div>
+                <div class="sc rv"><b>🥪</b>
+                    <h3>नास्ता</h3>
+                    <p>वडापाव, मिसळ, समोसा आणि बरंच काही, गरमागरम.</p>
+                </div>
+                <div class="sc rv"><b>🍛</b>
+                    <h3>जेवण</h3>
+                    <p>पोटभर, चवदार आणि आपुलकीने वाढलेलं.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" style="padding-top:20px">
+        <div class="w">
+            <div class="hl rv">
+                <h2>आज काय खाणार? 😋</h2>
+                <p>आमचे सगळे पदार्थ ताजे आणि गरमागरम. आवडता पदार्थ निवडा!</p>
+            </div>
+            <div class="fil rv"><button class="chip on" data-f="सर्व">सर्व</button><button class="chip"
+                    data-f="पेय">पेय</button><button class="chip" data-f="नाश्ता">नाश्ता</button><button class="chip"
+                    data-f="भजी">भजी</button><button class="chip" data-f="भेळ">भेळ</button><button class="chip"
+                    data-f="गोड">गोड</button></div>
+            <div class="mg">
+                <article class="dish" data-c="पेय">
+                    <div class="ph"><img src="assets/chaha.webp" alt="चहा" loading="lazy"></div><span
+                        class="tg t-पेय">पेय</span>
+                    <h3>चहा</h3>
+                    <p>वाफाळता, कडक आणि मनाला तरतरी देणारा.</p>
+                </article>
+                <article class="dish" data-c="पेय">
+                    <div class="ph"><img src="assets/coffee.webp" alt="कॉफी" loading="lazy"></div><span
+                        class="tg t-पेय">पेय</span>
+                    <h3>कॉफी</h3>
+                    <p>गरमागरम, फेसाळ आणि सुगंधी.</p>
+                </article>
+                <article class="dish" data-c="नाश्ता">
+                    <div class="ph"><img src="assets/vadapav.webp" alt="वडापाव" loading="lazy"></div><span
+                        class="tg t-नाश्ता">नाश्ता</span>
+                    <h3>वडापाव</h3>
+                    <p>गरम वडा, मऊ पाव आणि झणझणीत चटणी.</p>
+                </article>
+                <article class="dish" data-c="नाश्ता">
+                    <div class="ph"><img src="assets/misal.webp" alt="मिसळपाव" loading="lazy"></div><span
+                        class="tg t-नाश्ता">नाश्ता</span>
+                    <h3>मिसळपाव</h3>
+                    <p>तिखट कट, कुरकुरीत फरसाण आणि सोबत पाव.</p>
+                </article>
+                <article class="dish" data-c="भजी">
+                    <div class="ph"><img src="assets/kandabhaji.webp" alt="कांदाभजी" loading="lazy"></div><span
+                        class="tg t-भजी">भजी</span>
+                    <h3>कांदाभजी</h3>
+                    <p>कुरकुरीत, खमंग आणि गरमागरम.</p>
+                </article>
+                <article class="dish" data-c="भजी">
+                    <div class="ph"><img src="assets/batatabhaji.webp" alt="बटाटाभजी" loading="lazy"></div><span
+                        class="tg t-भजी">भजी</span>
+                    <h3>बटाटाभजी</h3>
+                    <p>मऊ, चटपटीत आणि चटणीसोबत मजा.</p>
+                </article>
+                <article class="dish" data-c="नाश्ता">
+                    <div class="ph"><img src="assets/samosa.webp" alt="समोसा" loading="lazy"></div><span
+                        class="tg t-नाश्ता">नाश्ता</span>
+                    <h3>समोसा</h3>
+                    <p>खुसखुशीत आवरण आणि मसालेदार सारण.</p>
+                </article>
+                <article class="dish" data-c="नाश्ता">
+                    <div class="ph"><img src="assets/patis.webp" alt="पॅटिस" loading="lazy"></div><span
+                        class="tg t-नाश्ता">नाश्ता</span>
+                    <h3>पॅटिस</h3>
+                    <p>चटणी भरलेलं, कुरकुरीत आणि चविष्ट.</p>
+                </article>
+                <article class="dish" data-c="नाश्ता">
+                    <div class="ph"><img src="assets/rassavada.webp" alt="रस्सावडा" loading="lazy"></div><span
+                        class="tg t-नाश्ता">नाश्ता</span>
+                    <h3>रस्सावडा</h3>
+                    <p>वडा, झणझणीत रस्सा आणि पाव.</p>
+                </article>
+                <article class="dish" data-c="भेळ">
+                    <div class="ph"><img src="assets/matkibhel.webp" alt="मटकीभेळ" loading="lazy"></div><span
+                        class="tg t-भेळ">भेळ</span>
+                    <h3>मटकीभेळ</h3>
+                    <p>मोड आलेली मटकी, कांदा आणि चटपटीत मसाला.</p>
+                </article>
+                <article class="dish" data-c="भेळ">
+                    <div class="ph"><img src="assets/olibhel.webp" alt="ओलीभेळ" loading="lazy"></div><span
+                        class="tg t-भेळ">भेळ</span>
+                    <h3>ओलीभेळ</h3>
+                    <p>आंबट-गोड चटण्या आणि कुरकुरीत शेव.</p>
+                </article>
+                <article class="dish" data-c="गोड">
+                    <div class="ph"><img src="assets/ladu.webp" alt="मोतीचुर लाडू" loading="lazy"></div><span
+                        class="tg t-गोड">गोड</span>
+                    <h3>मोतीचुर लाडू</h3>
+                    <p>तोंडात विरघळणारा गोड घास.</p>
+                </article>
+            </div>
+            <p class="mn rv">आणि अजून बरेच काही... प्रत्यक्ष येऊन चव घ्या! 🎉</p>
+        </div>
+    </section>
+
+    <section class="fr" id="hotel">
+        <div class="w fg"><img class="f rv" src="assets/hotel-front.webp" alt="हॉटेल जय मल्हारचं दर्शनी रूप"
+                loading="lazy">
+            <div class="rv">
+                <h2>एकदा नक्की या!</h2>
+                <p class="q">खमंग चव... मन जिंकणारा स्वाद...</p>
+                <p>जय मल्हार म्हणजे फक्त हॉटेल नाही, तर चहाच्या कपासोबत गप्पा मारण्याचं आणि घरच्यासारखं खाण्याचं हक्काचं
+                    ठिकाण आहे. स्वाद आपुला, आपलेपण आमचा.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bhet">
+        <div class="w">
+            <div class="hl rv">
+                <h2>भेट द्या, आम्ही वाट पाहतोय! 🙏</h2>
+            </div>
+            <div class="vg">
+                <div class="vc rv">
+                    <h3>📍 आमचा पत्ता</h3>
+                    <p style="font-family:var(--d);font-weight:700;font-size:1.8rem">हॉटेल जय मल्हार<br>धनगरवाडी फाटा
+                    </p>
+                </div>
+                <div class="vc call rv">
+                    <h3>📞 ऑर्डर / चौकशीसाठी कॉल करा</h3>
+                    <p>पदार्थांची माहिती हवी असेल तर थेट फोन करा.</p><a class="big"
+                        href="tel:+918530401182">८५३०४०११८२</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer><img src="assets/logo.png" alt="हॉटेल जय मल्हार लोगो">
+        <div class="n">हॉटेल जय मल्हार</div>
+        <div>जिथं चव बोलते...</div><a class="p" href="tel:+918530401182">📞 ८५३०४०११८२</a><small>॥ स्वाद आपुला, आपलेपण
+            आमचा ॥ © २०२६ हॉटेल जय मल्हार</small>
+    </footer>
+    <a class="pill fab" href="tel:+918530401182" aria-label="कॉल करा">📞 कॉल करा</a>
+    <script>
+        var io = new IntersectionObserver(function (e) { e.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('on'); io.unobserve(x.target) } }) }, { threshold: .1 });
+        document.querySelectorAll('.rv').forEach(function (el) { io.observe(el) });
+        var cs = document.querySelectorAll('.chip'), ds = document.querySelectorAll('.dish');
+        cs.forEach(function (c) { c.onclick = function () { cs.forEach(function (k) { k.classList.remove('on') }); c.classList.add('on'); var f = c.dataset.f; ds.forEach(function (d) { d.hidden = !(f === 'सर्व' || d.dataset.c === f) }) } });
+    </script>
+</body>
+
+</html>
